@@ -16,6 +16,7 @@
 	<div class="container">
 		<form action="users/signin.do" method="post" style="margin: 0 auto;width:500px;vertical-align: middle; ">
 		<h3>SIMPLE HOMEPAGE</h3>
+		<p>${id }</p>
 			<input type="text" name="id" placeholder="아이디" class="mainSigninForm"/><br/>
 			<input type="password" name="pwd" class="mainSigninForm" placeholder="비밀번호"/><br/>
 			<button type="submit" class="btn btn-primary mainSigninForm">

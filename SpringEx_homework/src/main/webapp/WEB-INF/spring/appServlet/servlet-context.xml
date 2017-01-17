@@ -8,10 +8,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
-	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
+
 
 	<!-- DB 접속 정보를 가지고 있는 문서 읽어들이기 -->
 	<beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -39,6 +36,19 @@
 		<beans:constructor-arg name="sqlSessionFactory" ref="sessionFactory"/>
 	</beans:bean>	
 	
+	<!-- AbstractView Type 객체로 응답하기 위해  property로 순위를 정한다(0순위)-->
+	<beans:bean 
+		class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<beans:property name="order" value="0"/>
+	</beans:bean>
+	
+	<context:component-scan base-package="com.test.myhomepage" />
+	<context:component-scan base-package="com.test.myhomepage.users.*"/>	
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />	
+	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
@@ -47,9 +57,5 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
-	<context:component-scan base-package="com.test.myhomepage" />
-	
-	
 	
 </beans:beans>
