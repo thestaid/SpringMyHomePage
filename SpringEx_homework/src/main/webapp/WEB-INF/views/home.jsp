@@ -31,10 +31,10 @@
 			<c:otherwise>
 				<div style="margin:0 auto;width:500px;vertical-align:middle;">
 					<h3>SIMPLE HOMEPAGE</h3>
-					<a href="users/private/info.do?id=${id}" class="btn btn-warning mainSigninForm" style="margin-top:150px;">
+					<a href="users/info.do?id=${id}" class="btn btn-warning mainSigninForm" style="margin-top:150px;">
 						<span class="glyphicon glyphicon-user"></span> ${id }님
 					</a><br/>
-					<a href="users/signout.do?id=${id}" class="btn btn-danger mainSigninForm">
+					<a href="users/signout.do" class="btn btn-danger mainSigninForm">
 						<span class="glyphicon glyphicon-remove"></span> 로그아웃
 					</a><br/>								
 				</div>		

@@ -31,8 +31,10 @@ public class UsersServiceImpl implements UsersService{
 
 	@Override
 	public ModelAndView getData(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		UsersDto dto=usersDao.getData(id);
+		ModelAndView mView=new ModelAndView();
+		mView.addObject("dto", dto);
+		return mView;
 	}
 
 	@Override
@@ -43,14 +45,14 @@ public class UsersServiceImpl implements UsersService{
 
 	@Override
 	public boolean update(UsersDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean isSuccess=usersDao.update(dto);
+		return isSuccess;
 	}
 
 	@Override
 	public boolean delete(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean isSucess=usersDao.delete(id);
+		return isSucess;
 	}
 	
 	

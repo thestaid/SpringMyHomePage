@@ -42,8 +42,11 @@ public class UsersDaoImpl implements UsersDao{
 
 	@Override
 	public UsersDto getData(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		UsersDto dto=null;
+		try{
+			dto=session.selectOne("users.getData", id);	
+		}catch(Exception e){}
+		return dto;
 	}
 
 	@Override
@@ -54,14 +57,26 @@ public class UsersDaoImpl implements UsersDao{
 
 	@Override
 	public boolean update(UsersDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean isSuccess=false;
+		try{
+			session.update("users.update", dto);
+			isSuccess=true;
+		}catch(Exception e){
+			isSuccess=false;
+		}
+		return isSuccess;
 	}
 
 	@Override
 	public boolean delete(String id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean isSuccess=false;
+		try{
+			session.update("users.delete", id);
+			isSuccess=true;			
+		}catch(Exception e){
+			isSuccess=false;
+		}
+		return isSuccess;
 	}
 
 }

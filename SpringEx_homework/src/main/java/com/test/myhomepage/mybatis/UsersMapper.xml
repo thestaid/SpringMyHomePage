@@ -10,6 +10,16 @@
 		INSERT INTO users (id,pwd,email,regdate) 
 		VALUES(#{id}, #{pwd}, #{email}, SYSDATE)
 	</insert>
+	<select id="getData" parameterType="String" resultType="usersDto">
+		SELECT id,pwd,email,regdate
+		FROM users WHERE id=#{id}		
+	</select>
+	<update id="update" parameterType="usersDto">
+		UPDATE users SET pwd=#{pwd}, email=#{email} WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM users WHERE id=#{id}
+	</delete>
 </mapper>
 
 
