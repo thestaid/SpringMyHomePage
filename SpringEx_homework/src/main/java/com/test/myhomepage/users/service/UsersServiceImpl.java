@@ -18,13 +18,13 @@ public class UsersServiceImpl implements UsersService{
 	private UsersDao usersDao;
 
 	@Override
-	public boolean insert(HttpServletRequest request, UsersDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean insert(UsersDto dto) {
+		boolean isSuccess=usersDao.insert(dto);
+		return isSuccess;
 	}
 
 	@Override
-	public boolean isValid(HttpServletRequest request, UsersDto dto) {
+	public boolean isValid(UsersDto dto) {
 		boolean isValid=usersDao.isValid(dto);
 		return isValid;
 	}
@@ -42,13 +42,13 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public boolean update(HttpServletRequest request, UsersDto dto) {
+	public boolean update(UsersDto dto) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean delete(HttpServletRequest request, String id) {
+	public boolean delete(String id) {
 		// TODO Auto-generated method stub
 		return false;
 	}

@@ -16,8 +16,14 @@ public class UsersDaoImpl implements UsersDao{
 	
 	@Override
 	public boolean insert(UsersDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean isSuccess=false;
+		try{
+			session.insert("users.insert", dto);
+			isSuccess=true;
+		}catch(Exception e){
+			isSuccess=false;
+		}
+		return isSuccess;
 	}
 
 	//isValid Start
