@@ -30,7 +30,7 @@ public class UsersDaoImpl implements UsersDao{
 		if(resultDto==null){
 			return false;
 		}else{
-			return false;
+			return true;
 		}
 	}//isValid END
 
