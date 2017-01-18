@@ -59,4 +59,5 @@
 	<context:component-scan base-package="com.test.myhomepage" />
 	<context:component-scan base-package="com.test.myhomepage.*"/>
 	<context:component-scan base-package="com.test.myhomepage.users.*"/>	
+	<context:component-scan base-package="com.test.myhomepage.board.*"/>
 </beans:beans>
