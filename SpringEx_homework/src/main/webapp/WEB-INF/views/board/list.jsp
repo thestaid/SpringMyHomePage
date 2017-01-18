@@ -21,7 +21,7 @@
 </style>
 <body>
 	<div class="container">
-		<div class="tab" style="margin:0 auto;width:500px;vertical-align:middle; ">
+		<div class="tab" style="margin:0 auto;width:80%;vertical-align:middle; ">
 			<h3>게시판</h3>
 			<table class="table table-hover" >
 				<thead>
